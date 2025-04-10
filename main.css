@@ -1,18 +1,4 @@
-/*
-Theme Name: Jason Stroff
 
-  1. >>> Headr Style
-  2. >>> Banner Style
-  3. >>> About Style
-  4. >>> Skills Style
-  5. >>> Experience Style
-  6. >>> Work Style
-  7. >>> Footer Style
-
-*/
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------*/
 html {font-family: 'Georgia', serif;background-color:#FFF}
 body {font-family: 'Georgia', serif;overflow-x: hidden; background-color:#FFF; font-weight:400;font-style: normal; color:#373737; font-size:14px}
 a,a:hover,a:focus,i,input,button,input:focus,.transition {text-decoration: none;outline: none;transition-delay: 0s;transition-duration: 0.4s;transition-property: all;transition-timing-function: ease;box-shadow: none;}
@@ -20,14 +6,13 @@ a{color: #000}
 iframe {border: 0;outline: none;}
 ::-moz-selection {background:#000;text-shadow: none;color:#FFF}
 ::selection {background:#000;text-shadow: none;color:#FFF}
-img {max-width: 100%;border: none;outline: none;height: auto;}
+img {border: none;outline: none;height: auto;}
 input,textarea {border-radius: 0;resize: none;}
 ul {padding: 0;margin: 0;}
 @font-face {
 font-family: 'Georgia', serif;}
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {background-color: transparent;background-image: none;color:#000;}
 /* 1.2 Typography */
-h1{font-family: "Sofia", sans-serif;}
 h2,h3,h4,h5,h6 {font-family: 'Georgia', serif;}
 figure{ margin: 0 }
 svg,img { max-width: 100%; height: auto; }
@@ -61,9 +46,9 @@ svg,img { max-width: 100%; height: auto; }
 /*-----------------------------------------------------------------
   3. >>> About Style
 ----------------------------------------------------------------*/
-.ds-about-section{ padding-top: 60px; padding-bottom: 120px; }
-.ds-heading{ display: inline-block; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 1px; font-size: 16px; border-bottom: 3px solid #F26464; padding-bottom: 7px; margin-bottom: 23px; }
-.ds-about-section p{ color: #373737; font-size: 24px; line-height: 40px; font-weight: 300; margin-bottom: 60px; }
+.ds-about-section{ padding-top: 30px; padding-bottom: 30px; padding-left: 110px;}
+.ds-heading{ display: inline-block; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 1px; font-size: 20px; border-bottom: 3px solid #F26464; padding-bottom: 7px; margin-bottom: 23px; }
+.ds-about-section p{ color: #373737; font-size: 16px; font-weight: 300; }
 
 .ds-button{ display: inline-block; text-transform: uppercase;font-size: 12px;line-height: 13px;font-weight: 600;letter-spacing: 3px; color:#F26464; padding:17px 30px;  border: 2px solid #F26464;border-radius: 60px; }
 .ds-button:hover{ background-color:#F26464 ; color: #FFF; }
@@ -97,17 +82,17 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 .ds-work-list{ padding-left: 70px; padding-top:40px; padding-right: 70px; background-color:#F6F8FA; margin-bottom: 40px; }
 .ds-work-list section{ padding-top: 20px; padding-right: 120px; }
 .ds-work-tilte{ color: #000; font-size: 30px; line-height: 36px; font-weight: 600; margin-bottom: 30px; }
-.ds-work-list p{ font-weight: 300; font-size: 18px; line-height: 30px; }
+.ds-work-list p{ font-weight: 300; font-size: 20px; line-height: 30px; }
 .ds-work-list .ds-button{ margin-top: 20px; }
 
-.ds-work-det-hed{ padding-top: 42px; padding-bottom: 80px; }
+.ds-work-det-hed{ padding-top: 42px;}
 .ds-work-det-title{ font-weight: 600; color:#000; font-size: 48px; margin-bottom: 20px; }
 .ds-work-det-dep{ display:block;font-weight: 600; color: #000; font-size: 18px; }
 .ds-work-content-sec{ padding: 100px 0; }
 .ds-work-content-sec p{ font-size: 18px; line-height: 36px; margin-bottom: 30px; }
 .ds-work-content-sec h2{ font-size: 30px; font-weight: 700; margin-bottom: 30px; }
 .ds-work-content-sec ul{ list-style: none; padding: 0; margin: 0; }
-.ds-work-content-sec li{font-size: 18px; line-height: 36px;  padding-left: 28px; position:relative; margin-bottom: 20px;}
+.ds-work-content-sec li{font-size: 20px; font-weight:600; line-height: 36px;  padding-left: 28px; position:relative; margin-bottom: 20px;}
 .ds-work-content-sec li:before{ content: ""; position: absolute; left: 0; top: 13px; border-radius: 100%; width: 8px; height: 8px; background-color: #373737; }
 /*-----------------------------------------------------------------
   7. >>> Footer Style
