@@ -124,6 +124,74 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
 /*-----------------------------------------------------------------
   1. >>> Header Style
 ----------------------------------------------------------------*/
+/* Navigation styling */
+.ds-navigation {
+  margin: 0 20px;
+}
+
+.ds-navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ds-navigation ul li {
+  margin: 0 15px;
+}
+
+.ds-navigation ul li a {
+  color: #373737;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.ds-navigation ul li a:hover,
+.ds-navigation ul li a.active {
+  color: #F26464;
+}
+
+/* Underline effect on hover and for active page */
+.ds-navigation ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #F26464;
+  transition: width 0.3s ease;
+}
+
+.ds-navigation ul li a:hover::after,
+.ds-navigation ul li a.active::after {
+  width: 100%;
+}
+
+/* Mobile navigation adjustments */
+@media (max-width: 768px) {
+  .ds-header-inner {
+    flex-wrap: wrap;
+  }
+  
+  .ds-navigation {
+    order: 3;
+    width: 100%;
+    margin: 15px 0 0;
+  }
+  
+  .ds-navigation ul {
+    justify-content: center;
+  }
+  
+  .ds-navigation ul li {
+    margin: 0 10px;
+  }
+}
 /* Updated social link styling for logo images */
 .ds-social {
   list-style: none;
@@ -180,8 +248,8 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
     display: none; /* Hide text on very small screens */
   }
 }
-.ds-header{ position: fixed; top: 0; width: 100%; z-index: 5; background-color: #FFF; padding: 20px 0; transition-delay: 0s; transition-duration: 0.4s; transition-property: all; transition-timing-function: ease; margin: 0;}
-.ds-header.ds-fixed-header{ padding:20px 0; box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.25); }
+.ds-header{ position: fixed; top: 0; width: 100%; z-index: 5; background-color: #FFF; padding: 10px 0; transition-delay: 0s; transition-duration: 0.4s; transition-property: all; transition-timing-function: ease; margin: 0;}
+.ds-header.ds-fixed-header{ padding:10px 0; box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.25); }
 .ds-header-inner{ display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 0 30px;}
 .ds-logo{ text-transform: uppercase; font-size: 18px; letter-spacing: 3px; color: #000; display: flex; align-items: center; margin: 0;}
 .ds-logo span{ display:flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #000; border-radius: 4px; color: #FFF; font-size: 22px; font-weight: 600; text-align: center; margin-right: 12px; }
@@ -394,8 +462,10 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 23px; padding-b
 ----------------------------------------------------------------*/
 .ds-footer{ 
   background-color: #FFF; 
-  padding-bottom: 80px;
-  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0; /* Added divider line */
+  margin-top: 50px; 
 }
 
 /* Footer container to allow flex layout */
