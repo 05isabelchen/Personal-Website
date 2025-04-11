@@ -1,0 +1,593 @@
+html {font-family: 'Georgia', serif; background-color:#FFF; margin: 0; padding: 0;}
+body {font-family: 'Georgia', serif; overflow-x: hidden; background-color:#FFF; font-weight:400; font-style: normal; color:#373737; font-size:14px; margin: 0; padding: 0;}
+a,a:hover,a:focus,i,input,button,input:focus,.transition {text-decoration: none; outline: none; transition-delay: 0s; transition-duration: 0.4s; transition-property: all; transition-timing-function: ease; box-shadow: none;}
+a{color: #000; margin: 0; padding: 0;}
+iframe {border: 0; outline: none; margin: 0;}
+::-moz-selection {background:#000; text-shadow: none; color:#FFF}
+::selection {background:#000; text-shadow: none; color:#FFF}
+img {border: none; outline: none; height: auto; margin: 0;}
+input,textarea {border-radius: 0; resize: none; margin: 0;}
+ul {padding: 0; margin: 0;}
+@font-face {
+font-family: 'Georgia', serif;}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {background-color: transparent; background-image: none; color:#000;}
+/* 1.2 Typography */
+h1 {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+h2,h3,h4,h5,h6 {font-family: 'Georgia', serif; margin-top: 0; margin-bottom: 20px;}
+figure{ margin: 0 }
+svg,img { max-width: 100%; height: auto; margin: 0;}
+
+/* Main container - centered with left-aligned content */
+.ds-container {
+  width: 100%;
+  max-width: 800px; /* Narrower container for better readability */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: left;
+}
+
+/* Force Bootstrap rows and columns to display vertically */
+.row {
+  display: block !important;
+}
+
+.col-12, .col-sm-12, .col-md-6, .col-md-7, .col-md-5, 
+.col-lg-6, .col-lg-7, .col-lg-5, 
+.col-xl-6, .col-xl-7, .col-xl-5,
+.col-xxl-6, .col-xxl-7, .col-xxl-5 {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: none !important;
+  display: block !important;
+  margin-bottom: 25px;
+}
+.centered-banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .banner-flex-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+        max-width: 600px; /* Control the width of the content area */
+      }
+      @media (max-width: 768px) {
+        .banner-flex-container {
+          flex-direction: column;
+        }
+      }
+
+/* Remove any Bootstrap grid conflicts */
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container, .container-md, .container-sm {
+    max-width: 800px;}}
+@media (min-width: 992px) {
+  .container, .container-lg, .container-md, .container-sm {
+    max-width: 800px;}}
+@media (min-width: 1200px) {
+  .container, .container-xl, .container-lg, .container-md, .container-sm {
+    max-width: 800px;}}
+/* Override Bootstrap grid columns */
+.container .row [class*="col-"] {
+  padding-left: 0;
+  padding-right: 0;}
+/* Banner flex layout */
+.banner-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.banner-image {
+  flex: 0 0 auto;
+}
+
+.banner-text {
+  flex: 1 1 auto;
+}
+
+/* Mobile responsive adjustment for banner */
+@media (max-width: 768px) {
+  .banner-flex-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .banner-image figure {
+    margin: 0 auto;
+  }
+  
+  .banner-text section h1,
+  .banner-text section h1 span {
+    text-align: center;
+  }
+}
+
+/*-----------------------------------------------------------------
+  1. >>> Header Style
+----------------------------------------------------------------*/
+/* Navigation styling */
+.ds-navigation {
+  margin: 0 20px;
+}
+
+.ds-navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ds-navigation ul li {
+  margin: 0 15px;
+}
+
+.ds-navigation ul li a {
+  color: #373737;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.ds-navigation ul li a:hover,
+.ds-navigation ul li a.active {
+  color: #F26464;
+}
+
+/* Underline effect on hover and for active page */
+.ds-navigation ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #F26464;
+  transition: width 0.3s ease;
+}
+
+.ds-navigation ul li a:hover::after,
+.ds-navigation ul li a.active::after {
+  width: 100%;
+}
+
+/* Mobile navigation adjustments */
+@media (max-width: 768px) {
+  .ds-header-inner {
+    flex-wrap: wrap;
+  }
+  
+  .ds-navigation {
+    order: 3;
+    width: 100%;
+    margin: 15px 0 0;
+  }
+  
+  .ds-navigation ul {
+    justify-content: center;
+  }
+  
+  .ds-navigation ul li {
+    margin: 0 10px;
+  }
+}
+/* Updated social link styling for logo images */
+.ds-social {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.ds-social li {
+  margin-left: 15px;
+}
+
+.ds-social li:first-child {
+  margin-left: 0;
+}
+
+.ds-social li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #FFF;
+  transition: transform 0.3s ease;
+}
+
+.ds-social li a:hover {
+  transform: scale(1.1);
+}
+
+.ds-social li a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Optional: Add specific colors for each social platform on hover */
+.ds-social li a[href*="github"]:hover {
+  background-color: #24292e;
+}
+
+.ds-social li a[href*="linkedin"]:hover {
+  background-color: #0077b5;
+}
+
+.ds-social li a[href*="instagram"]:hover {
+  background-color: #e1306c;
+}
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .ds-logo span {
+    display: none; /* Hide text on very small screens */
+  }
+}
+.ds-header{ position: fixed; top: 0; width: 100%; z-index: 5; background-color: #FFE4E4; padding: 10px 0; transition-delay: 0s; transition-duration: 0.4s; transition-property: all; transition-timing-function: ease; margin: 0;}
+.ds-header.ds-fixed-header{ padding:10px 0; box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.25); }
+.ds-header-inner{ display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 0 30px;}
+.ds-logo{ text-transform: uppercase; font-size: 18px; letter-spacing: 3px; color: #000; display: flex; align-items: center; margin: 0;}
+.ds-logo span{ display:flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #000; border-radius: 4px; color: #FFF; font-size: 22px; font-weight: 600; text-align: center; margin-right: 12px; }
+.ds-logo:hover{ color: #000; }
+
+.ds-social{ list-style: none; display: flex; align-items: center; flex-wrap: wrap; margin: 0;}
+.ds-social li{ margin-left: 12px; }
+.ds-social li:first-child{ margin-left: 0; }
+.ds-social li a{ border-radius: 100%; color: #FFF; width: 40px; height: 40px; background-color: #F26464; display:flex; justify-content: center; align-items: center; text-align: center; font-size: 16px; margin: 0;}
+.ds-social li a:hover{ background-color: #000; color: #FFF; }
+
+/*-----------------------------------------------------------------
+  2. >>> Banner Style
+----------------------------------------------------------------*/
+.ds-banner {
+  margin-top: 120px; 
+  margin-bottom: 30px;
+}
+.ds-banner-inner {max-width: 800px; margin: 0 auto; padding: 0 30px;}
+.ds-banner section{ 
+  padding-left: 0; 
+  padding-right: 0; 
+  margin: 0 auto; 
+  text-align: left;
+}
+.ds-banner figure {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.ds-banner section h1 span{ display: block; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; font-size: 16px; padding-bottom: 30px; margin: 0; text-align: left;}
+.ds-banner section h1{ font-weight: 400; font-size: 80px; line-height: 60px; color: #000; margin-top: 0; margin-bottom: 30px; text-align: left;}
+.ds-numbervalulist{ list-style: none; display: flex; align-items: center; flex-wrap: wrap; margin: 0; padding: 0; margin-top: 60px; justify-content: flex-start;}
+.ds-numbervalulist li{ margin-right: 60px; margin-bottom: 20px;}
+.ds-numbervalulist li:last-child{ margin-right: 0; }
+.ds-numbervalulist strong{ display: block; color: #F26464; font-size: 36px; font-weight: 800; margin-bottom: 5px; text-align: left;}
+.ds-numbervalulist span{ font-size: 16px; letter-spacing: 1px; text-align: left;}
+
+/*-----------------------------------------------------------------
+  3. >>> About Style
+----------------------------------------------------------------*/
+.ds-about-section{ 
+  padding-top: 30px; 
+  padding-bottom: 30px; 
+  margin: 0 auto; 
+  max-width: 800px; 
+  padding-left: 30px; 
+  padding-right: 30px; 
+  text-align: left;
+}
+.ds-heading{ 
+  display: block; 
+  font-weight: 700; 
+  color: #000; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  font-size: 30px; 
+  border-bottom: 3px solid #F26464; 
+  padding-bottom: 7px; 
+  margin-bottom: 20px; 
+  text-align: left;
+  width: 100%;
+}
+.ds-about-section p{ color: #373737; font-size: 20px; font-weight: 400; margin-bottom: 20px; text-align: left;}
+
+.ds-button{ display: inline-block; text-transform: uppercase; font-size: 12px; line-height: 13px; font-weight: 600; letter-spacing: 3px; color:#F26464; padding:17px 30px; border: 2px solid #F26464; border-radius: 60px; margin-top: 20px;}
+.ds-button:hover{ background-color:#F26464; color: #FFF; }
+.ds-arrow-button i{ display: inline-block; vertical-align: middle; margin-left: 5px;}
+
+/*-----------------------------------------------------------------
+  4. >>> Skills Style
+----------------------------------------------------------------*/
+.ds-skills-heading{ 
+  display: block; 
+  font-weight: 600; 
+  color: #000; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  font-size: 25px; 
+  border-bottom: 3px solid #F26464; 
+  padding-bottom: 7px; 
+  margin-bottom: 20px; 
+  text-align: left;
+  width: 100%;
+}
+.ds-skills-section{ 
+  padding-top: 30px;
+  padding-bottom: 30px; 
+  margin: 0 auto; 
+  max-width: 800px; 
+  padding-left: 30px; 
+  padding-right: 30px; 
+  text-align: left;
+}
+.ds-skills-list{ 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  margin-top: 20px; 
+  margin-bottom: 30px;
+  justify-content: flex-start;
+}
+.ds-skills-list li{ display: inline-block; color: #373737; font-size: 16px; padding:10px 20px; background-color: #FFF; border: 1px solid #D7D7D7;
+  border-radius: 27px; margin-right: 15px; margin-bottom: 15px; font-weight: 500;}
+
+/*-----------------------------------------------------------------
+  5. >>> Experience Style
+----------------------------------------------------------------*/
+.ds-experience-section{ 
+  padding-top: 30px;
+  padding-bottom: 30px; 
+  margin: 0 auto; 
+  max-width: 800px; 
+  padding-left: 30px; 
+  padding-right: 30px;
+  text-align: left;
+}
+.ds-experience-list section{ 
+  padding-right: 0; 
+  margin-bottom: 30px; 
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+.ds-experience-list section:last-child {
+  border-bottom: none;
+}
+.ds-experience-list{ padding-top: 15px; }
+.ds-officename{ 
+	font-size: 23px; 
+	font-weight: 600; 
+	margin-bottom: 10px; 
+	text-align: left;}
+.ds-experience-list span{ display: block; text-align: left;}
+span.ds-year{ color: #373737; font-size: 17px; font-weight: 400; padding-bottom: 5px; margin-bottom: 5px;}
+span.ds-department{ color: #373737; font-weight: 500; font-size: 23px; padding-bottom: 5px; margin-bottom: 5px;}
+.ds-experience-list p{ font-size: 17px; line-height: 24px; font-weight: 400; margin-bottom: 20px; text-align: left;}
+.ds-experience-list ul{ 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  padding-top: 10px; 
+  text-align: left; 
+  display: block;
+}
+.ds-experience-list ul li{font-size: 17px; line-height: 24px; font-weight: 400; padding-left: 28px; position:relative; margin-bottom: 15px; text-align: left;}
+.ds-experience-list ul li:before{ content: ""; position: absolute; left: 0; top: 10px; border-radius: 100%; width: 8px; height: 8px; background-color: #373737; }
+
+/*-----------------------------------------------------------------
+  6. >>> Work Style
+----------------------------------------------------------------*/
+.ds-work-section{ 
+  padding-top: 30px;
+  padding-bottom: 30px; 
+  margin: 0 auto; 
+  max-width: 800px; 
+  padding-left: 30px; 
+  padding-right: 30px;
+  text-align: left;
+}
+.ds-work-list{ 
+  padding: 30px; 
+  background-color:#F6F8FA; 
+  margin-bottom: 30px; 
+  text-align: left;
+}
+.ds-work-list figure {
+  margin-bottom: 20px;
+}
+.ds-work-list section{ padding-top: 20px; padding-right: 0; margin-bottom: 30px; text-align: left;}
+.ds-work-tilte{ color: #000; font-size: 30px; line-height: 36px; font-weight: 400; margin-bottom: 30px; margin-top: 0; text-align: left;}
+.ds-work-list p{ font-weight: 300; font-size: 20px; line-height: 30px; margin-bottom: 20px; text-align: left;}
+.ds-work-list .ds-button{ margin-top: 20px; margin-bottom: 20px;}
+
+.ds-work-det-hed{ 
+  padding-top: 42px; 
+  margin-bottom: 40px; 
+  max-width: 800px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  padding-left: 30px; 
+  padding-right: 30px; 
+  text-align: left;
+}
+.ds-work-det-title{ font-weight: 600; color:#000; font-size: 48px; margin-bottom: 20px; margin-top: 0; text-align: left;}
+.ds-work-det-dep{ display:block; font-weight: 600; color: #000; font-size: 18px; margin-bottom: 15px; text-align: left;}
+.ds-work-content-sec{ 
+  padding: 50px 0; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  padding-left: 30px; 
+  padding-right: 30px; 
+  text-align: left;
+}
+.ds-work-content-sec p{ font-size: 18px; line-height: 36px; margin-bottom: 30px; text-align: left;}
+.ds-work-content-sec h2{ font-size: 30px; font-weight: 700; margin-bottom: 30px; margin-top: 50px; text-align: left;}
+.ds-work-content-sec ul{ 
+  list-style: none; 
+  padding: 0; 
+  margin: 0 auto 30px 0; 
+  display: block;
+}
+.ds-work-content-sec li{font-size: 20px; font-weight:400; line-height: 36px; padding-left: 28px; position:relative; margin-bottom: 20px; text-align: left;}
+.ds-work-content-sec li:before{ content: ""; position: absolute; left: 0; top: 13px; border-radius: 100%; width: 8px; height: 8px; background-color: #373737; }
+
+/*-----------------------------------------------------------------
+  7. >>> Footer Style
+----------------------------------------------------------------*/
+.ds-footer{ 
+  background-color: #FFF; 
+  padding-bottom: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0; /* Added divider line */
+  margin-top: 50px; 
+}
+
+/* Footer container to allow flex layout */
+.ds-footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Left side content */
+.ds-footer-left {
+  text-align: left;
+}
+
+/* Right side content */
+.ds-footer-right {
+  text-align: right;
+}
+
+.ds-footer-left span { 
+  color: #626262; 
+  text-transform: uppercase; 
+  font-weight: 700; 
+  font-size: 16px; 
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.ds-footer-left h4 { 
+  color: #626262; 
+  font-size: 20px; 
+  font-weight: 700; 
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.ds-footer-left p { 
+  letter-spacing: 1.13px; 
+  color: #626262; 
+  font-size: 18px; 
+  margin-bottom: 0;
+}
+
+/* Social links container */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* Footer link styling */
+.footer-link {
+  color: #626262;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #F26464;
+}
+
+.ds-copyright { 
+  color: #626262; 
+  letter-spacing: 1px; 
+  font-size: 14px; 
+  text-align: left;
+  opacity: 0.7;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ds-footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .ds-footer-right {
+    margin-top: 30px;
+    align-self: flex-start;
+  }
+  
+  .social-links {
+    align-items: flex-start;
+  }
+}
+/*-------------------------------------------------------------------------------
+ Responsive XS Style @media (max-width: 767px) 
+-------------------------------------------------------------------------------*/
+@media (max-width: 768px) {
+	.ds-header,.ds-header.ds-fixed-header{ padding: 15px 0; }
+	.ds-banner,.ds-about-section,.ds-skills-section,.ds-experience-section,.ds-work-section,.ds-work-details-section{ padding-left: 15px; padding-right: 15px; }
+	.ds-logo{ font-size: 0; }
+	.ds-banner figure{ padding: 30px 0; }
+	.ds-banner section{ padding-left: 0; padding-right: 0; }
+	.ds-banner section h1 span{ padding-bottom: 0; }
+	.ds-banner section h1,.ds-work-det-title{ font-size: 30px; line-height: 40px; }
+	.ds-numbervalulist{ margin-top: 20px; flex-direction: column; align-items: flex-start; }
+	.ds-numbervalulist li{ margin-right: 0; margin-bottom: 20px; width: 100%; }
+	.ds-about-section{ padding-bottom: 30px; }
+	.ds-about-section p,.ds-work-content-sec p,.ds-work-content-sec li{ font-size: 15px; line-height: 30px; margin-bottom: 20px; }
+	.ds-skills-list li{ margin-right: 10px; margin-bottom: 10px; font-size: 14px; }
+	.ds-experience-list section{ padding-right: 0; margin-bottom: 20px; padding-bottom: 5px; }
+	.ds-work-list{ padding: 20px; }
+	.ds-work-list p{font-size: 15px; line-height: 30px;}
+	.ds-footer{ padding: 40px 15px; }
+	.ds-footer section h4{ font-size: 30px; }
+	.ds-copyright{ font-size: 14px; }
+	.ds-footer section{ padding-bottom: 20px; }
+	.ds-button{ padding: 11px 10px; }
+	.ds-work-details-section{ padding-top: 30px; }
+	.ds-work-det-title{ margin-bottom: 7px; }
+	.ds-work-content-sec h2{ font-size: 20px; }
+	.ds-work-content-sec{ padding: 30px 0; }
+	.ds-work-list section{ padding-right: 0; padding-bottom: 20px; }
+}
