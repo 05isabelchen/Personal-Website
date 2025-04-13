@@ -121,6 +121,274 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
   }
 }
 
+/* About Page Specific Styles */
+
+/* Main container for about content */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Section styling */
+.about-section {
+  margin-bottom: 60px;
+}
+
+/* Image and text layout */
+.about-image-text {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Reverse layout (text first, then image) */
+.about-image-text.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image container */
+.about-image {
+  flex: 0 0 40%;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Text container */
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #373737;
+}
+
+/* Interests section */
+.interests-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.interest-item {
+  flex: 0 0 calc(33.33% - 20px);
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.interest-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+}
+
+.interest-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.interest-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.interest-item p {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #373737;
+}
+
+/* Gallery for personal interests */
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  height: 250px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.3);
+}
+
+.gallery-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+}
+
+.gallery-caption h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.gallery-caption p {
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+/* Fun facts list */
+.fun-facts-list {
+  padding-left: 25px;
+  margin-top: 20px;
+}
+
+.fun-facts-list li {
+  font-size: 18px;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 15px;
+  line-height: 1.5;
+}
+
+.fun-facts-list li::before {
+  content: "•";
+  color: #F26464;
+  font-size: 20px;
+  position: absolute;
+  left: -15px;
+}
+
+/* Connect section */
+.connect-text {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto 30px;
+}
+
+.connect-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .about-image-text {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .about-image-text.reverse {
+    flex-direction: column;
+  }
+  
+  .about-image {
+    flex: 0 0 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .interests-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .interest-item {
+    flex: 0 0 100%;
+  }
+  
+  .about-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .about-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-item {
+    height: 200px;
+  }
+  
+  .gallery-caption {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .gallery-item img {
+    filter: brightness(0.8);
+  }
+  
+  .gallery-caption h3 {
+    font-size: 20px;
+  }
+  
+  .gallery-caption p {
+    display: none;
+  }
+  
+  .connect-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
 /*-----------------------------------------------------------------
   1. >>> Header Style
 ----------------------------------------------------------------*/
