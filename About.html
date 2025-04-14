@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Isabel Chen | About Me</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-</head>
-<body>
+    <meta charset="utf-8">
+    <title>Isabel Chen | About</title>
+    <meta name="portfolio" content="Basic Stuff">
+	<link rel="stylesheet" href = "css/main.css">
+	<!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poetsen+One&family=Satisfy&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  </head>
+  <body>
 
   <!-- header -->
 <header class="ds-header" id="site-header">
@@ -46,15 +51,15 @@
         </div>
 </header>
 <!-- header -->
-<!-- Banner -->
+<!-- Projects Banner -->
 <div class="ds-banner">
-  <div class="container">
+  <div class="about-container">
     <div class="centered-banner">
       <div class="banner-text">
         <section>
-          <h2 class = "ds-heading">
+		  <h6>
             Get to know me!
-          </h2>
+          </h6>
         </section>
       </div>
     </div>
@@ -62,15 +67,33 @@
 </div>
 
 <!-- About Me Main Content -->
-<div class="ds-container">
-  <!-- Personal Introduction Section -->
-  <section>
-    <div>
-      <div>
-        <img src="images/Bio Image.jpg" alt="Isabel Chen portrait">
+<div class="about-container">
+  <!-- Three Photos Row -->
+  <div class = "about-section">
+  <section class="photo-row">
+      <div class="about-gallery">
+    <div class="gallery-item">
+      <img src="images/Myself/MOMA.jpg" alt="Reading">
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/Myself/Sunglasses.jpg" alt="Travel">
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/Myself/SF.jpg" alt="Another hobby">
+    </div>
+  </div>
+</section>
+</div>
+    <!-- Personal Introduction Section -->
+  <section class="about-section">
+    <div class="about-image-text">
+      <div class="about-image">
+        <img src="images/Myself/Professional.jpeg" alt="Isabel Chen portrait">
       </div>
-      <div>
-        <h2 class="ds-heading">My Story</h2>
+      <div class="about-text">
+        <h2 class="ds-heading">Background</h2>
         <p>Hello! I'm Isabel Chen, currently a second year at University of California, Berkeley studying Economics and Data Science. My academic journey has been driven by my passion for understanding economic patterns and leveraging data to derive meaningful insights.</p>
         <p>I grew up in Frederick, Maryland and I developed an early interest in economics when I was in high school. I really love the application of economics to improve policies and industries and how data science can be used to enhance research.</p>
         <p>When I'm not analyzing data or studying economic theories, you can find me reading, watching movies, or discovering a new hobby.</p>
@@ -79,12 +102,12 @@
   </section>
 
   <!-- Academic Interests Section -->
-  <section class="about-section">
+  <section class="about-section half-width">
     <h2 class="ds-heading">Academic Interests</h2>
     <div class="interests-container">
       <div class="interest-item">
         <div class="interest-icon">
-          <img src="images/about/economics-icon.png" alt="Economics">
+          <img src="images/econicon.png" alt="Economics">
         </div>
         <h3>Economics</h3>
         <p>My favorite aspects of economics include econometrics, macroeconomic policy, and financial economics. I fell in love with economics when I was in high school during my AP Macroeconomics class. My teacher was amazing and made me really love economics in the end.</p>
@@ -92,108 +115,204 @@
       
       <div class="interest-item">
         <div class="interest-icon">
-          <img src="images/about/data-science-icon.png" alt="Data Science">
+          <img src="images/dataicon.png" alt="Data Science">
         </div>
         <h3>Data Science</h3>
         <p>In data science, I'm drawn to specific aspects like machine learning, data visualization, statistical modeling, etc. I love how data science has that interconnection with economics and how it can be used to study eocnomic theories and policies. Data science is such an amazing tool that can be used to enhance an aspect or field.</p>
       </div>
-      
-      <div class="interest-item">
-        <div class="interest-icon">
-          <img src="images/about/research-icon.png" alt="Research">
-        </div>
-        <h3>Research</h3>
-        <p>My research interests lie at the intersection of economics and data science. I'm currently exploring stock market analysis and transportation policies.</p>
-      </div>
-    </div>
+	</div>
   </section>
 
-  <!-- Personal Interests Section -->
-  <section class="about-section">
-    <div class="carousel-container">
-  <div class="carousel-slides">
-    <div class="slide">
-      <img src="images/photo1.jpg" alt="Photo 1">
-    </div>
-    <div class="slide">
-      <img src="images/photo2.jpg" alt="Photo 2">
-    </div>
-    <div class="slide">
-      <img src="images/photo3.jpg" alt="Photo 3">
-    </div>
-    <div class="slide">
-      <img src="images/photo4.jpg" alt="Photo 4">
-    </div>
-  </div>
-  
-  <!-- Navigation arrows -->
-  <button class="carousel-button prev">❮</button>
-  <button class="carousel-button next">❯</button>
-  
-  <!-- Dots/indicators -->
-  <div class="carousel-dots">
-    <span class="dot active" data-index="0"></span>
-    <span class="dot" data-index="1"></span>
-    <span class="dot" data-index="2"></span>
-    <span class="dot" data-index="3"></span>
-  </div>
-</div>
-        <div>
-          <span>Literature</span>
-          <p>My love for books extends beyond my Book Expectations Podcast. Some of my favorite books and authors are listed below! I'm always looking for new recommendations!</p>
-        </div>
-      </div>
-      
-      <div class="carousel-container">
-  <div class="carousel-slides">
-    <div class="slide">
-      <img src="images/photo1.jpg" alt="Photo 1">
-    </div>
-    <div class="slide">
-      <img src="images/photo2.jpg" alt="Photo 2">
-    </div>
-    <div class="slide">
-      <img src="images/photo3.jpg" alt="Photo 3">
-    </div>
-    <div class="slide">
-      <img src="images/photo4.jpg" alt="Photo 4">
-    </div>
-  </div>
-  
-  <!-- Navigation arrows -->
-  <button class="carousel-button prev">❮</button>
-  <button class="carousel-button next">❯</button>
-  
-  <!-- Dots/indicators -->
-  <div class="carousel-dots">
-    <span class="dot active" data-index="0"></span>
-    <span class="dot" data-index="1"></span>
-    <span class="dot" data-index="2"></span>
-    <span class="dot" data-index="3"></span>
-  </div>
-</div>
-          <h3>Travel</h3>
-          <p>I love to travel with my friends and family. Some highlights of my travels in the past</p>
-        </div>
-      </div>
-      
-      
-          <h3>Your Hobby</h3>
-          <p>I have many different hobbies and interests. Many are included in this slideshow.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Fun Facts Section -->
+ <!-- Personal Interests Section with 3 Carousels -->
   <section class="about-section">
+    <h2 class="ds-heading">Beyond Academics</h2>
+    
+    <div class="beyond-academics-carousels">
+         <!-- Carousel A (full width on top) -->
+    <div class="carousel-section">
+      <h2>Hanging out with Friends!</h2>
+	  <p>In my free time I love to hangout with my friends and my club. I love to get lunch or coffee, occasionally some concerts. Some of my favorites include club retreats and concerts!</p>
+      <div id="carouselA" class="carousel-container">
+        <div class="carousel-slides">
+          <div class="slide">
+            <img src="images/Friends/BER2024.jpg" alt="Mountain landscape">
+            <div class="slide-caption">Club retreat at Monterey Bay!</div>
+          </div>
+          <div class="slide">
+            <img src="images/Friends/BER2025.jpg" alt="Forest scene">
+            <div class="slide-caption">Club retreat at Ukiah!</div>
+          </div>
+          <div class="slide">
+            <img src="images/Friends/Conan and Carol.jpg" alt="Coastal view">
+            <div class="slide-caption">My friend and I at the Conan concert!</div>
+          </div>
+          <div class="slide">
+            <img src="images/Friends/Gracie and Jennie.jpg" alt="Desert landscape">
+            <div class="slide-caption">My friend and I at the Gracie Abrams concert!</div>
+          </div>
+		    <div class="slide">
+            <img src="images/Friends/BERF2024.jpg" alt="Desert landscape">
+            <div class="slide-caption">Club retreat at Lake Tahoe!</div>
+          </div>
+        </div>
+        
+        <!-- Navigation arrows -->
+        <button class="carousel-button prev">❮</button>
+        <button class="carousel-button next">❯</button>
+        
+        <!-- Dots/indicators -->
+        <div class="carousel-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+          <span class="dot" data-index="3"></span>
+		  <span class="dot" data-index="4"></span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Container for Carousel B and C (side by side) -->
+    <div class="dual-carousel-container">
+      <!-- Carousel B (left side) -->
+      <div class="carousel-section half-width">
+        <h2>Concerts!</h2>
+		<p>I also love going to concerts whenever I have the time! I love listening to music and watching my favorite artists live. Here are some of my favorite concerts when I'm not studying.</p>
+        <div id="carouselB" class="carousel-container">
+          <div class="carousel-slides">
+            <div class="slide">
+              <img src="images/Concerts/TaylorSwift.jpg" alt="Taylor Swift">
+              <div class="slide-caption">Taylor Swift concert in NYC!</div>
+            </div>
+            <div class="slide">
+              <img src="images/Concerts/ConanGray.jpg" alt="Conan Gray">
+              <div class="slide-caption">Conan Gray concert in SF!</div>
+            </div>
+            <div class="slide">
+              <img src="images/Concerts/Gracie Abrams.jpg" alt="Gracie">
+              <div class="slide-caption">Gracie Abrams concert in Berkeley!</div>
+            </div>
+			<div class="slide">
+              <img src="images/Concerts/Niki.jpg" alt="Niki">
+              <div class="slide-caption">Niki concert in Berkeley!</div>
+            </div>
+			<div class="slide">
+              <img src="images/Concerts/Studio Ghibli.jpg" alt="Niki">
+              <div class="slide-caption">Joe Hisaishi concert in DC!</div>
+            </div>
+          </div>
+          
+          <!-- Navigation arrows -->
+          <button class="carousel-button prev">❮</button>
+          <button class="carousel-button next">❯</button>
+          
+          <!-- Dots/indicators -->
+          <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+			<span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Carousel C (right side) -->
+      <div class="carousel-section half-width">
+        <h2>Food (yumm)</h2>
+		<p>I am a huge foodie and one of my favorite things to do with friends and family is trying new cafes and restaurants. Here are the highlights of my favorite meals and restuarants!</p>
+        <div id="carouselC" class="carousel-container">
+          <div class="carousel-slides">
+            <div class="slide">
+              <img src="images/Foodie/berksocialclub.jpg" alt="Professional portrait">
+              <div class="slide-caption">Brunch at Berkeley Social Club</div>
+            </div>
+            <div class="slide">
+              <img src="images/Foodie/beefwellington.jpg" alt="Natural light portrait">
+              <div class="slide-caption">Beef Wellington at Hell's Kitchen</div>
+            </div>
+            <div class="slide">
+              <img src="images/Foodie/Buribop.jpg" alt="Candid portrait">
+              <div class="slide-caption">Buribop at Morimoto</div>
+            </div>
+			<div class="slide">
+              <img src="images/Foodie/chengdu.jpg" alt="Professional portrait">
+              <div class="slide-caption">Szechuan food at Chengdu, China</div>
+            </div>
+            <div class="slide">
+              <img src="images/Foodie/fishmori.jpg" alt="Natural light portrait">
+              <div class="slide-caption">Cod at Morimoto</div>
+            </div>
+            <div class="slide">
+              <img src="images/Foodie/NYCSzechuan.jpg" alt="Candid portrait">
+              <div class="slide-caption">Szechuan food at NYC</div>
+            </div>
+			<div class="slide">
+              <img src="images/Foodie/paella.jpg" alt="Professional portrait">
+              <div class="slide-caption">Paella at Teleferic</div>
+            </div>
+            <div class="slide">
+              <img src="images/Foodie/risotto.jpg" alt="Natural light portrait">
+              <div class="slide-caption">Lobster risotto at Hell's Kitchen</div>
+            </div>
+            <div class="slide">
+              <img src="images/Foodie/sashimi.jpg" alt="Candid portrait">
+              <div class="slide-caption">Sashimi at Morimoto</div>
+            </div>
+          </div>
+          
+          <!-- Navigation arrows -->
+          <button class="carousel-button prev">❮</button>
+          <button class="carousel-button next">❯</button>
+          
+          <!-- Dots/indicators -->
+          <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+			<span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+			<span class="dot" data-index="5"></span>
+            <span class="dot" data-index="6"></span>
+			<span class="dot" data-index="7"></span>
+            <span class="dot" data-index="8"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Interaction.js"></script>
+
+ <!-- Three Photos Row -->
+  <div class = "about-section">
+  <h2>My cat!</h2>
+  <p>I have two adorable cats named Pluto and Daisy!</p>
+  <section class="photo-row">
+      <div class="about-gallery">
+    <div class="gallery-item">
+      <img src="images/Cats/Daisy.jpg" alt="Reading">
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/Cats/together.jpg" alt="Travel">
+    </div>
+    
+    <div class="gallery-item">
+      <img src="images/Cats/pluto.jpg" alt="Another hobby">
+    </div>
+  </div>
+</section>
+</div>
+   <!-- Fun Facts Section -->
+  <section class="carousel-section">
     <h2 class="ds-heading">Fun Facts</h2>
     <ul class="fun-facts-list">
       <li>My favorite book of all time is The Secret History by Donna Tartt</li>
       <li>I used to be number one in solitaire on SpeedRun.com</li>
       <li>If I wasn't studying economics and data science, I would probably be studying English (my former major)</li>
-      <li>My guilty pleasure is watching Love Island with my friend</li>
-      <li>I have a boat license</li>
+      <li>I love watching rom-coms and reality TV (ex. Love, Rosie & Love Island)</li>
+      <li>I love playing poker!</li>
     </ul>
   </section>
 
@@ -206,7 +325,6 @@
     </div>
   </section>
 </div>
-
 <!-- Footer -->
 <footer class="ds-footer">
   <div class="ds-footer-container">
@@ -225,18 +343,9 @@
       </div>
     </div>
   </div>
-  
-  <!-- Copyright note -->
-  <div class="ds-footer-container">
-    <div class="ds-copyright">
-      © 2025 Isabel Chen. All rights reserved.
-    </div>
-  </div>
-</footer>
-
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/Interaction.js"></script>
 
 </body>
 </html>
