@@ -17,7 +17,11 @@ h1 {
   font-weight: 400;
   font-style: normal;
 }
-h2,h3,h4,h5,h6 {font-family: 'Georgia', serif; margin-top: 0; margin-bottom: 20px;}
+h2,h3,h4,h5 {font-family: 'Georgia', serif; margin-top: 0; margin-bottom: 20px;}
+h6 {font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 figure{ margin: 0 }
 svg,img { max-width: 100%; height: auto; margin: 0;}
 
@@ -173,15 +177,15 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
 
 /* Interests section */
 .interests-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Controlled gap */
   margin-top: 30px;
+  width: 100%;
 }
 
+/* For the interest items */
 .interest-item {
-  flex: 0 0 calc(33.33% - 20px);
   background-color: #f8f8f8;
   border-radius: 8px;
   padding: 25px;
@@ -246,10 +250,6 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
   transition: transform 0.5s ease;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
-  filter: brightness(0.3);
-}
 
 .gallery-caption {
   position: absolute;
@@ -267,10 +267,6 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
   opacity: 0;
   transition: opacity 0.3s ease;
   text-align: center;
-}
-
-.gallery-item:hover .gallery-caption {
-  opacity: 1;
 }
 
 .gallery-caption h3 {
@@ -339,14 +335,25 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
     margin: 0 auto;
   }
   
+ /* For the interests container */
+.interests-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .interests-container {
     flex-direction: column;
-    gap: 20px;
   }
   
   .interest-item {
-    flex: 0 0 100%;
+    width: 100%;
   }
+}
   
   .about-gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -388,29 +395,70 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
     gap: 15px;
   }
 }
-.carousel-container {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Layout for carousels */
+.carousel-section {
+  margin-bottom: 50px;
 }
 
+.dual-carousel-container {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+/* Carousel container */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Slides container */
 .carousel-slides {
   display: flex;
   transition: transform 0.5s ease;
 }
 
+/* Individual slide */
 .slide {
   min-width: 100%;
-  height: 450px;
+  position: relative;
 }
 
+#carouselA .slide {
+  height: 500px;
+}
+
+#carouselB .slide,
+#carouselC .slide {
+  height: 350px;
+}
+
+/* Slide image */
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+/* Caption styling */
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
 }
 
 /* Navigation buttons */
@@ -427,10 +475,19 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
 .carousel-button:hover {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }
 
 .prev {
@@ -444,11 +501,12 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
 /* Dots/indicators */
 .carousel-dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 70px; /* Positioned above captions */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
+  z-index: 10;
 }
 
 .dot {
@@ -463,6 +521,63 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
 .dot.active {
   background-color: white;
 }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .dual-carousel-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .half-width {
+    width: 100%;
+  }
+  
+  #carouselA .slide {
+    height: 400px;
+  }
+  
+  #carouselB .slide,
+  #carouselC .slide {
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+  
+  #carouselA .slide {
+    height: 300px;
+  }
+  
+  #carouselB .slide,
+  #carouselC .slide {
+    height: 250px;
+  }
+  
+  .carousel-button {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+  
+  .carousel-dots {
+    bottom: 60px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .slide-caption {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
 /*-----------------------------------------------------------------
   1. >>> Header Style
 ----------------------------------------------------------------*/
@@ -623,6 +738,7 @@ svg,img { max-width: 100%; height: auto; margin: 0;}
 }
 .ds-banner section h1 span{ display: block; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; font-size: 16px; padding-bottom: 30px; margin: 0; text-align: left;}
 .ds-banner section h1{ font-weight: 400; font-size: 80px; line-height: 60px; color: #000; margin-top: 0; margin-bottom: 30px; text-align: left;}
+.ds-banner section h6{ font-weight: 400; font-size: 80px; line-height: 60px; color: #000; margin-top: 0; margin-bottom: 30px; text-align: left;}
 .ds-numbervalulist{ list-style: none; display: flex; align-items: center; flex-wrap: wrap; margin: 0; padding: 0; margin-top: 60px; justify-content: flex-start;}
 .ds-numbervalulist li{ margin-right: 60px; margin-bottom: 20px;}
 .ds-numbervalulist li:last-child{ margin-right: 0; }
