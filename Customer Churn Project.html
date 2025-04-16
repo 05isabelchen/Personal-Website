@@ -23,15 +23,23 @@
 <script src="https://cdn.tailwindcss.com"></script>
   </head>
 <body>
-  <!-- header -->
+<!-- header -->
 <header class="ds-header" id="site-header">
-		<div class="ds-header-inner">
+        <div class="ds-header-inner">
           <!-- navigation links -->
           <nav class="ds-navigation">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="About.html">About</a></li>
-			  <li><a href="Projects.html" class="active">Projects</a></li>
+              <li class="dropdown">
+                <a href="Projects.html" class="active dropdown-toggle">Projects</a>
+                <ul class="dropdown-menu">
+                  <li><a href="Customer Churn Project.html">Customer Churn</a></li>
+                  <li><a href="Projects/data-analysis.html">Website</a></li>
+                  <li><a href="Projects/ui-design.html">Podcast</a></li>
+                  <li><a href="Projects/mobile-apps.html">Articles</a></li>
+                </ul>
+              </li>
               <li><a href="Resume.html">Resume</a></li>
             </ul>
           </nav>
@@ -791,11 +799,12 @@ plt.xlabel('Predicted label')
 
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="Interaction.js"></script>
+<script src="JavaScript/Interaction.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- <script src = "Dashboard.js"></script>
-<script src = "pythonVisual.js"></script>
+ <script src = "JavaScript/Dashboard.js"></script>
+<script src = "JavaScript/pythonVisual.js"></script>
 <!-- Remove any other animation scripts and use just this one -->
-<script src = "Animation.js"></script>
+<script src = "JavaScript/Animation.js"></script>
+<script src = "JavaScript/Header.js"></script>
 </body>
 </html>
