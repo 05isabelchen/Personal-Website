@@ -180,8 +180,7 @@ print(payment_dist)
 print('\n')
 
 # Percentage for Payment Method in Customer Churn overall
-payment_churn_percentage = df.groupby('Churn')['PaymentMethod'].
-↪value_counts(normalize=True).mul(100).unstack()
+payment_churn_percentage = df.groupby('Churn')['PaymentMethod'].value_counts(normalize=True).mul(100).unstack()
 print(payment_churn_percentage)
 
 #Frequency tables for each telecommunication service
