@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Customer Churn Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href = "css/main.css">
+	<link rel="stylesheet" href="css/Projects.css">
+	<link rel="stylesheet" href="css/CCPredict.css">
+	<!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poetsen+One&family=Satisfy&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+  </head>
+<body>
+  <!-- header -->
+<header class="ds-header" id="site-header">
+		<div class="ds-header-inner">
+          <!-- navigation links -->
+          <nav class="ds-navigation">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About.html">About</a></li>
+			  <li><a href="Projects.html" class="active">Projects</a></li>
+              <li><a href="Resume.html">Resume</a></li>
+            </ul>
+          </nav>
+          <!-- social -->
+			<ul class="ds-social">
+				<li>
+					<a href="https://github.com/05isabelchen" target="_blank">
+					<img src="images/github.png" alt="GitHub">
+					</a>
+				</li>
+				<li>
+					<a href="https://linkedin.com/in/05isabelchen" target="_blank">
+					<img src="images/linkedin.png" alt="LinkedIn">
+					</a>
+				</li>
+				<li>
+					<a href="https://instagram.com/isabel.epub" target="_blank">
+					<img src="images/instagram.png" alt="Instagram">
+					</a>
+				</li>
+			</ul>
+			<!-- social -->
+        </div>
+</header>
+<!-- header -->
+<!-- Projects Banner -->
+    <!-- Content container that's centered and has max-width -->
+<div class="wave-banner">
+    <div class="container">
+        <div class="centered-banner">
+            <div class="banner-text">
+                <section>
+                    <h6>Customer Churn Prediction</h6>
+                </section>
+            </div>
+        </div>
+    </div>
+    <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#F26464" fill-opacity="0.15" d="M0,160L48,138.7C96,117,192,75,288,80C384,85,480,139,576,154.7C672,171,768,149,864,149.3C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+</div>
+
+    <!-- Project Overview with Wavy Background -->
+    <div class="ds-about-section">
+        
+        <section>
+            <h2 class="ds-heading">Project Summary</h2>
+            <p>This project analyzes customer churn data to identify the key factors influencing whether a customer leaves a telecom service. Using skills in data wrangling, exploratory data analysis (EDA), and statistical correlation, the project uncovers that features like contract type, tenure, and payment method are highly associated with customer retention. Visualization, feature interpretation, and data storytelling are applied to translate patterns into actionable insights for improving customer retention strategies.</p>
+            <p>The interactive dashboard below allows you to explore the data, visualize patterns, and even simulate customer scenarios to predict churn probability based on various attributes.</p>
+        </section>
+		<section>
+			<h2 class="ds-heading">Overview & Background</h2>
+			<p>A business will measure <a href = "https://en.wikipedia.org/wiki/Churn_rate">customer churn</a> as the loss of existing customers continuing doing business or using their service with the company, compared to the total number of customers in a given period of time. Analyzing customer churn is important for a business to understand why a customer will stop using their service or want to stop doing business with them. Improving their customer retention is good for building brand loyalty and increasing overall customer satisfaction and profitability. While there are formulas that are easy to calculate what the customer churn is, it is difficult to accurately predict.</p>
+		</section>
+		<section>
+		<p>This dataset that I will be using comes from a telecommunication company and it provides the home phone and internet services to 7043 customers in California.</p>
+		<p>The data set includes information about:</p>
+		<ul class = "fun-facts-list">
+			<li>Customers who left within the last month – the column is called Churn</li>
+			<li>Services that each customer has signed up for – phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and movies</li>
+			<li>Customer account information – how long they’ve been a customer, contract, payment method, paperless billing, monthly charges, and total charges</li>
+			<li>Demographic info about customers – gender, age range, and if they have partners and dependents</li>
+		</ul>
+		<p>In this project I will analyze the different factors that affect customer churn by creating regression models to identify correlation as well as creating a survival analysis model. I also create a prediction model using classification machine learning to accuractely predict the likeliness of a customer to churn.</p>
+		</section>
+		<section>
+			<h2 class = "ds-officename">Objectives</h2>
+			<ul class="fun-facts-list">
+				<li>What is the current churn percentage for this company?</li>
+				<li>What factors directly affect customer churn, and how does it differ?</li>
+				<li>Does demographics or type of telecommunication service affect whether or not a customer will churn?</li>
+				<li>Which services are the most profitable?</li>
+				<li>How long before a customer will change companies or churn?</li>
+			</ul>
+			<p>The data comes from Kaggle and can be accessed <a href = "https://www.kaggle.com/datasets/blastchar/telco-customer-churn">here</a></p>
+		</section>
+		    <button class="code-btn" onclick="toggleCodeSection('import-libraries')">Show Python Code</button>
+        <div id="import-libraries" class="code-section">
+            <div class="code-header">
+                <span>Python Code for Libraries Imported</span>
+                <button class="copy-btn" onclick="copyCode('import-libraries')">Copy</button>
+            </div>
+            <pre>
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from lifelines.plotting import plot_lifetimes
+from lifelines import KaplanMeierFitter
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn.ensemble import RandomForestClassifier
+import statsmodels.api as sm
+from sklearn import metrics
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import accuracy_score, classification_report, log_loss
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_curve, auc
+from sklearn.pipeline import Pipeline
+from sklearn.ensemble import GradientBoostingClassifier
+import xgboost as xgb
+from xgboost import XGBClassifier
+            </pre>
+        </div>
+	</div>
+
+    <!-- Dashboard Content -->
+        
+        
+        <!-- Interactive Distribution Graph -->
+   <div class="about-container">
+    <h2 class="ds-heading">Summary Statistics</h2>
+       <button class="code-btn" onclick="toggleCodeSection('variable-summary-code')">Show Python Code</button>
+        <div id="variable-summary-code" class="code-section">
+            <div class="code-header">
+                <span>Python Code for Summary Statistics</span>
+                <button class="copy-btn" onclick="copyCode('variable-summary-code')">Copy</button>
+            </div>
+            <pre>
+#Frequency Table for contract type
+contracttype_churn_counts = df.groupby(['Churn', 'Contract']).size().
+	unstack(fill_value=0)
+print(contracttype_churn_counts)
+print("\n")
+
+# Normalized frequency table for the contract type
+contract_table_percent = contracttype_churn_counts.
+	div(contracttype_churn_counts.sum(axis=1), axis=0) * 100
+print(contract_table_percent)
+
+# Frequency for each type of payment method
+payment_stats = df['PaymentMethod'].value_counts(normalize=True) * 100
+payment_stats
+payment_dist = df.groupby('Churn')['PaymentMethod'].value_counts().unstack()
+print(payment_dist)
+print('\n')
+
+# Percentage for Payment Method in Customer Churn overall
+payment_churn_percentage = df.groupby('Churn')['PaymentMethod'].
+↪value_counts(normalize=True).mul(100).unstack()
+print(payment_churn_percentage)
+
+#Frequency tables for each telecommunication service
+df = df.rename(columns={
+	'PhoneService': 'Phone Service',
+	'MultipleLines': 'Multiple Lines',
+	'InternetService': 'Internet Service',
+	'OnlineSecurity': 'Online Security',
+	'OnlineBackup': 'Online Backup',
+	'DeviceProtection': 'Device Protection',
+	'TechSupport': 'Tech Support',
+	'StreamingTV': 'Streaming TV',
+
+	'StreamingMovies': 'Streaming Movies',})
+service = ['Phone Service', 'Multiple Lines', 'Internet Service', 'Online
+	Security','Online Backup', 'Device Protection', 'Tech Support', 'Streaming
+	TV', 'Streaming Movies']
+def generate_service_frequency_by_churn(df, service):
+	for col in service:
+		print(f"\nFrequency Table for '{col}' (Grouped by Churn):")
+		print(df.groupby('Churn')[col].value_counts()) # Raw counts
+		print("\nPercentage Distribution by Churn:")
+		print(df.groupby('Churn')[col].value_counts(normalize=True).mul(100).round(2))
+		print("-" * 60)
+generate_service_frequency_by_churn(df, service)
+
+# Create frequency table for each demographic
+df = df.rename(columns = {
+	'gender' : 'Gender',
+	'SeniorCitizen' : 'Senior Citizen'
+})
+df['Senior Citizen'] = df['Senior Citizen'].replace({0: 'No', 1: 'Yes'})
+demographics = ['Gender', 'Senior Citizen', 'Partner', 'Dependents']
+def generate_demographic_frequency_by_churn(df, demographics):
+	for col in demographics:
+		print(f"\nFrequency Table for '{col}' (Grouped by Churn):")
+		print(df.groupby('Churn')[col].value_counts())
+		print("\nPercentage Distribution by Churn:")
+		print(df.groupby('Churn')[col].value_counts(normalize=True).mul(100).round(2))
+		print("-" * 60)
+generate_service_frequency_by_churn(df, demographics)
+            </pre>
+        </div>
+      <div class="distribution-controls">
+        <div style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
+          <div style="margin-bottom: 20px; display: flex; justify-content: center;">
+            <label class="distribution-label">Select Variable to Analyze:</label>
+            <select id="variableSelect" class="distribution-select">
+              <option value="charges">Monthly Charges</option>
+			  <option value="Totalcharges">Total Charges</option>
+			  <option value="tenure">Tenure</option>
+			  <option value="maleorfemale">Gender</option>
+			  <option value="seniorCitizen">Senior Citizen</option>
+			  <option value="dependent">Dependent</option>
+			  <option value="partner">Partner</option>
+			  <option value="phoneservice">Phone Service</option>
+			  <option value="multiplelines">Multiple Lines</option>
+              <option value="streamingservice">Streaming TV</option>
+			  <option value="streamingservice">Streaming Movies</option>
+			  <option value="internet">Internet Service</option>
+              <option value="techsupport">Tech Support</option>
+              <option value="onlinesecurity">Online Security</option>
+			  <option value="protect">Device Protection</option>
+			  <option value="contract">Contract Type</option>
+              <option value="payment">Payment Method</option>
+            </select>
+          </div>
+        </div>
+      
+      <div style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); margin-bottom: 20px;">
+        <div class="ds-officename">Summary Statistics</div>
+        <div id="summarySection"></div>
+      </div>
+      
+      <div style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); margin-bottom: 50px;">
+        <div class="ds-officename">Churn Relationship</div>
+        <div id="churnSection"></div>
+      </div>
+    </div>
+  </div>
+
+<div class="about-container">
+    <h2 class="ds-heading">Churn Analysis Visualization</h2>
+	<h3 class = "ds-officename">Visualizations for Charges & Tenure</h3>
+	<button class="code-btn" onclick="toggleCodeSection('churn-viz-code')">Show Python Code</button>
+        <div id="churn-viz-code" class="code-section">
+            <div class="code-header">
+                <span>Python Code for Churn Analysis Visualization</span>
+                <button class="copy-btn" onclick="copyCode('churn-viz-code')">Copy</button>
+            </div>
+            <pre>
+# Data visualization of churn/no churn based on monthly charges
+sns.kdeplot(df.MonthlyCharges[df["Churn"] == 'No'], fill = True, label="No Churn")
+sns.kdeplot(df.MonthlyCharges[df["Churn"] == 'Yes'], fill = True, label="Churn")
+plt.title('Monthly Charges by Churn (KDE PLOT)')
+plt.xlabel('Monthly Charges')
+plt.ylabel('Density')
+plt.show()
+
+# Data visualization of churn/no churn based on total charges (kde plot)
+sns.kdeplot(df.TotalCharges[df["Churn"] == 'No'], fill = True, label="No Churn")
+sns.kdeplot(df.TotalCharges[df["Churn"] == 'Yes'], fill = True, label="Churn")
+plt.title('Total Charges by Churn (KDE PLOT)')
+plt.xlabel('Total Charges')
+plt.ylabel('Density')
+plt.show()
+
+# Data visualization for tenure by churn
+sns.violinplot(data = df, x = 'Churn', y = 'tenure')
+plt.title('Tenure by Churn')
+plt.xlabel('Churn')
+plt.ylabel('Tenure')
+plt.show()
+            </pre>
+        </div>
+</div>
+	<div class = "dashboard-container">
+	<div class="chart-grid">
+                <div class="chart-container">
+                    <h3 class="chart-title">Monthly Charges by Churn (KDE Plot)</h3>
+                    <img src="images/CustomerChurn/MonthlyChurn.png" alt="Churn Rate by Contract Type" class="chart-image">
+                    <p class="chart-caption">Customers who churned had higher monthly charges on average. You can see the orange curve peaking around 70–100 USD. Customers who did not churn have two notable clusters: one peak at low monthly charges (around 20 USD) and another smaller one around 70–90 USD. This smooth curve helps you see general distribution trends and compare how spread out or concentrated the values are.</p>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Total Charges by Churn (KDE Plot)</h3>
+                    <img src="images/CustomerChurn/TotalCharge.png" alt="Churn Rate by Payment Method" class="chart-image">
+                    <p class="chart-caption">Non-churners have spent much more over time, which makes sense since they’ve stayed longer. The huge gap between median for churners (703 USD) and non-churners (1,679 USD) shows churners often leave before investing much. This is very similar to the monthly charges but takes tenure into account. Churned customers (orange) are clustered at low total charges, typically under 2000 USD, with a sharp peak very early. Non-churned customers (blue) are more widely distributed, with a long tail reaching 8000–9000 USD, suggesting they’ve been with the company longer.</p>
+                </div>
+</div>
+</div>
+<div class = "about-container">
+        <div class="dashboard-section">
+            <div class="chart-grid">
+                <div class="chart-container full-width-chart">
+                    <h3 class="chart-title">Tenure by Churn (Violin Plot)</h3>
+					<img src="images/CustomerChurn/TenureChurn.png" alt="Churn Rate by Tenure" class="chart-image">
+                    <p class="chart-caption">The distribution for the non-churned customers is even shows a normal distribution while the churned customers shows a larger concentration around 0-10 months while showing a right skew. This shows that those who churn have used the service for a short amount of time. The customers who churn overall have lower monthly and total charges and will churn after a shorter amount of time. This is a sign of the company possibly not being able to keep customer retention in the beginning of the service. There is a lot of customer loyalty since the tenure for non-churned customers is almost double those who do churn and monthly charges are also overall higher.</p>
+                </div>
+				</div>
+        </div>
+</div>
+<div class = "about-container">
+	<h3 class = "ds-officename">Visualizations for other Variables</h3>
+	    <button class="code-btn" onclick="toggleCodeSection('other')">Show Python Code</button>
+        <div id="other" class="code-section">
+            <div class="code-header">
+                <span>Python Code for Churn Analysis Visualization</span>
+                <button class="copy-btn" onclick="copyCode('other')">Copy</button>
+            </div>
+            <pre>
+# Plot the bar chart for contract type by churn
+contracttype_churn_counts.plot(kind='bar', figsize=(8, 6))
+plt.title('Contract Type by Churn')
+plt.xlabel('Churn')
+plt.ylabel('Count')
+plt.xticks(rotation=0)
+plt.legend(['Month-to-Month', 'One Year', 'Two Year'], loc='upper right')
+plt.show()
+
+# Plot the bar chart for payment method by churn
+payment_churn_counts.plot(kind='bar', figsize=(8, 6))
+plt.title('Payment Method by Churn')
+plt.xlabel('Churn')
+plt.ylabel('Count')
+plt.xticks(rotation=0)
+plt.legend(['Bank transfer (automatic)', 'Credit card', 'Electronic check',␣
+	'Mailed check'], loc='upper right')
+plt.show()
+
+# Data visualization for different telecommunication services by Churn
+fig, axes = plt.subplots(nrows=3, ncols=3, figsize=(15, 12))
+axes = axes.flatten() 
+for i, col in enumerate(service):
+	sns.countplot(data=df, x='Churn', hue=col, ax=axes[i])
+	axes[i].set_title(f"{col} by Churn")
+	axes[i].set_xlabel("Churn")
+	axes[i].set_ylabel("Count")
+	axes[i].tick_params(axis='x', rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Data visualization for different demographics by Churn
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(15, 12)) # 2x2 grid
+axes = axes.flatten()
+for i, col in enumerate(demographics):
+	sns.countplot(data=df, x='Churn', hue=col, ax=axes[i])
+	axes[i].set_title(f"{col} by Churn")
+	axes[i].set_xlabel("Churn")
+	axes[i].set_ylabel("Count")
+	axes[i].tick_params(axis='x', rotation=0)
+plt.tight_layout()
+plt.show()
+
+            </pre>
+        </div>
+    <div id="churn-visualization-root"></div>
+</div>
+
+<!-- Full Width Wave Section with Key Metrics -->
+ <div class="wave-section">
+            <div class="wave-container">
+                <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#F26464" fill-opacity="0.15" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+    <!-- Content container that's centered and has max-width -->
+    <div class="wave-content">
+	<div class="dashboard-container">
+        <h2 class="key-title">Key Metrics</h2>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value" style="color: #F26464;">26.5%</div>
+                <div class="metric-title">Overall Churn Rate</div>
+                <div class="metric-description">of customers churned overall</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" style="color: #4F98CA;">18 months</div>
+                <div class="metric-title">Avg. Customer Tenure</div>
+                <div class="metric-description">average customer lifespan</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" style="color: #F26464;">$75</div>
+                <div class="metric-title">Avg. Monthly Cost</div>
+                <div class="metric-description">from customers likely to churn</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" style="color: #5CB85C;">$1.5K</div>
+                <div class="metric-title">Avg. Total Charges</div>
+                <div class="metric-description">from customers likely to churn</div>
+            </div>
+        </div>
+    </div>
+	</div>
+    
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#F26464" fill-opacity="0.15" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+</div>
+<div class = "about-container">
+        <!-- Main Charts -->
+            <h2 class="ds-heading">Churn Survival Analysis</h2>
+			<button class="code-btn" onclick="toggleCodeSection('survival-analysis')">Show Python Code</button>
+        <div id="survival-analysis" class="code-section">
+            <div class="code-header">
+                <span>Python Code for Churn Survival Analysis based on Variable</span>
+                <button class="copy-btn" onclick="copyCode('survival-analysis')">Copy</button>
+            </div>
+            <pre>
+# Survival Analysis using Telco Data
+df['Churn'] = df['Churn'].map({'Yes': 1, 'No': 0})
+durations = df['tenure']
+event_observed = df['Churn']
+km = KaplanMeierFitter()
+km.fit(durations, event_observed, label='Kaplan Meier Estimate')
+km.plot()
+def time_at_survival_threshold(kmf, threshold):
+	sf = kmf.survival_function_
+	return sf[sf[kmf._label] <= threshold].index.min()
+thresholds = [0.8, 0.65]
+colors = ['blue', 'green']
+for thresh, color in zip(thresholds, colors):
+	time = time_at_survival_threshold(km, thresh)
+	if pd.notna(time):
+		plt.axhline(thresh, color=color, linestyle='dashed')
+		plt.axvline(time, color=color, linestyle='dashed')
+		plt.text(time + 1, thresh + 0.02,
+			f"{int(thresh*100)}% survival  {time} months",
+			color=color, fontsize=10)
+plt.title('Survival Curve using Telco data')
+plt.ylabel('Likelihood of Survival')
+
+# Survival Analysis for Payment Method
+kmf_ch1 = KaplanMeierFitter()
+T1 = df.loc[df['PaymentMethod'] == 'Bank transfer (automatic)', 'tenure']
+E1 = df.loc[df['PaymentMethod'] == 'Bank transfer (automatic)', 'Churn']
+kmf_ch1.fit(T1, E1, label='Bank transfer')
+ax = kmf_ch1.plot(ci_show=False)
+
+kmf_ch2 = KaplanMeierFitter()
+T2 = df.loc[df['PaymentMethod'] == 'Credit card (automatic)', 'tenure']
+E2 = df.loc[df['PaymentMethod'] == 'Credit card (automatic)', 'Churn']
+kmf_ch2.fit(T2, E2, label='Credit card')
+ax = kmf_ch2.plot(ci_show=False)
+
+kmf_ch3 = KaplanMeierFitter()
+T3 = df.loc[df['PaymentMethod'] == 'Electronic check', 'tenure']
+E3 = df.loc[df['PaymentMethod'] == 'Electronic check', 'Churn']
+kmf_ch3.fit(T3, E3, label='Electronic check')
+ax = kmf_ch3.plot(ci_show=False)
+
+kmf_ch4 = KaplanMeierFitter()
+T4 = df.loc[df['PaymentMethod'] == 'Mailed check', 'tenure']
+E4 = df.loc[df['PaymentMethod'] == 'Mailed check', 'Churn']
+kmf_ch4.fit(T4, E4, label='Mailed check')
+ax = kmf_ch4.plot(ci_show=False)
+
+plt.title("Churn Duration based on Payment Method Survival Curve")
+plt.ylabel('Likelihood of Survival');
+
+# Survival Analysis for Contract Type
+kmf_ch1 = KaplanMeierFitter()
+T1 = df.loc[df['Contract'] == 'Month-to-month', 'tenure']
+E1 = df.loc[df['Contract'] == 'Month-to-month', 'Churn']
+kmf_ch1.fit(T1, E1, label='Month-to-month')
+ax = kmf_ch1.plot(ci_show=False)
+
+kmf_ch2 = KaplanMeierFitter()
+T2 = df.loc[df['Contract'] == 'One year', 'tenure']
+E2 = df.loc[df['Contract'] == 'One year', 'Churn']
+kmf_ch2.fit(T2, E2, label='One year')
+ax = kmf_ch2.plot(ci_show=False)
+
+kmf_ch3 = KaplanMeierFitter()
+T3 = df.loc[df['Contract'] == 'Two year', 'tenure']
+E3 = df.loc[df['Contract'] == 'Two year', 'Churn']
+kmf_ch3.fit(T3, E3, label='Two year')
+ax = kmf_ch3.plot(ci_show=False)
+
+plt.title("Churn Duration based on Contract Term Survival Curve")
+plt.ylabel('Likelihood of Survival');
+            </pre>
+        </div>
+		</div>
+            <div class = "dashboard-container">
+			<div class="chart-grid">
+                <div class="chart-container">
+                    <h3 class="chart-title">Churn Survival by Contract Type</h3>
+                    <img src="images/CustomerChurn/ContractSurvival.png" alt="Churn Rate by Contract Type" class="chart-image">
+                    <p class="chart-caption">The month-to-month contract has a very short likelihood of survival, the curve reaches 0% at around 70 months, and reaches 50% probability of survival around 35 months. While the two-year contract has a very high likelihood of survival since the customers who have the subscription for 2 years likely are satisfied with the service and are not going to churn. The one-year subscription drops a lot ater the 60 month mark, which shows that the length for the one-year is about half the length of survival and probability as those with the two-year subscription.</p>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Churn Survival by Payment Method</h3>
+                    <img src="images/CustomerChurn/PaymentMethodSurvival.png" alt="Churn Rate by Payment Method" class="chart-image">
+                    <p class="chart-caption">This outcome is very similar to the bar chart that compared the no churn and churn by payment method. The bank transfer and credit card have very similar survival curves. The mailed check is slightly lower, which might be due to the fact that it is manual so customers might be quicker to drop the service. The electronic check is very similar in that fact, however there is a much higher proportion who have churned.</p>
+                </div>
+</div>
+</div>
+<div class = "about-container">
+        <div class="dashboard-section">
+            <div class="chart-grid">
+                <div class="chart-container full-width-chart">
+                    <img src="images/CustomerChurn/SurvivalCurve.png" alt="Churn Rate by Tenure" class="chart-image">
+                    <p class="chart-caption">There is 80% probability of survival beyond about 22 months and 65% probability of survival beyond about 65 months.</p>
+                </div>
+				</div>
+        </div>
+</div>
+
+<div class="about-container">
+        <!-- Insights Section -->
+            <h2 class="ds-heading">Key Insights</h2>
+			</div>
+			<div class="dashboard-container">
+            <div class="insights-container">
+                <div class="insight-card">
+                    <h3 class="insight-title">High Risk Customer Segments</h3>
+                    <ul class="insight-list">
+                        <li class="insight-item">New customers (0-12 months) with month-to-month contracts</li>
+                        <li class="insight-item">Customers paying via electronic check</li>
+                        <li class="insight-item">Fiber optic internet users without tech support</li>
+                        <li class="insight-item">Customers with high monthly charges ($70-90 range)</li>
+                        <li class="insight-item">Customers without online security features</li>
+                    </ul>
+                </div>
+                <div class="insight-card">
+                    <h3 class="insight-title">Recommended Retention Strategies</h3>
+                    <ul class="insight-list">
+                        <li class="insight-item">Offer contract upgrades with incentives to month-to-month customers</li>
+                        <li class="insight-item">Promote automatic payment methods with discounts</li>
+                        <li class="insight-item">Bundle tech support with fiber services at reduced rates</li>
+                        <li class="insight-item">Introduce loyalty programs for customers in months 7-12</li>
+                        <li class="insight-item">Create targeted service bundles for high ARPU customers</li>
+                    </ul>
+                </div>
+                <div class="insight-card">
+                    <h3 class="insight-title">Key Churn Factors</h3>
+                    <ul class="insight-list">
+                        <li class="insight-item">Contract type is the strongest predictor of churn behavior</li>
+                        <li class="insight-item">Tenure shows strong inverse relationship with churn probability</li>
+                        <li class="insight-item">Payment method significantly influences retention</li>
+                        <li class="insight-item">Technical support services are critical for fiber customers</li>
+                        <li class="insight-item">Price sensitivity peaks in specific monthly charge ranges</li>
+                    </ul>
+                </div>
+            </div>
+		</div>
+<div class = "about-container">
+        <!-- Interactive Churn Predictor -->
+        <div class="dashboard-section" id="churn-prediction">
+            <h2 class="ds-heading">Correlation between Churn & Others</h2>
+        <button class="code-btn" onclick="toggleCodeSection('correlation')">Show Python Code</button>
+        <div id="correlation" class="code-section">
+            <div class="code-header">
+                <span>Python Code for Correlation</span>
+                <button class="copy-btn" onclick="copyCode('correlation')">Copy</button>
+            </div>
+            <pre>
+# Create Correlation Table
+df_copy = df.copy()
+columns = df_copy.columns
+label_encoder = LabelEncoder()
+for col in columns:
+	df_copy[col] = label_encoder.fit_transform(df_copy[col])
+df_copy
+correlation_matrix = df_copy.corr()
+churn_correlation = correlation_matrix['Churn'].sort_values(ascending=False)
+print(churn_correlation)
+
+# Visualize with a heat map
+plt.figure(figsize=(15, 12)) # Adjust figure size
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5, vmin = -1, vmax = 1)
+plt.title('Feature Correlation Heatmap')
+plt.show()
+            </pre>
+        </div>   
+</div>
+        <!-- Main Charts -->
+				<div class="chart-grid">
+                <div class="chart-container">
+                    <h3 class="chart-title">Correlation</h3>
+                    <img src="images/CustomerChurn/correlation1.png" alt="Churn Rate by Contract Type" class="chart-image">
+                </div>
+                <div class="chart-container">
+                    <img src="images/CustomerChurn/correlation2.png" alt="Churn Rate by Payment Method" class="chart-image">
+                    
+                </div>
+</div>
+
+
+        
+            <div class="chart-grid">
+                <div class="chart-container full-width-chart">
+				<h3 class="chart-title">Correlation Heatmap</h3>
+                    <img src="images/CustomerChurn/Heatmap.png" alt="Churn Rate by Tenure" class="chart-image">
+                    <p class="chart-caption">Monthly Charges (0.183523): Monthly Charges out of the variables we analyzed has the highest correlation with churn. Customers might churn due to the fact that the monthly charges might be too high. This also might be associated with bundles, which comes with services that the customer doesn't use.</p>
+					<p class="chart-caption">Senior Citizens (0.150889): Citizens that are also older will have a higher association and probability of churning. This might be because senior citizens are not as tech savvy and might not need as many subscriptions. They might be more price sensitive and not need the telecommunication services.</p>
+					<p class="chart-caption">Contract (-0.396713): Many of the customers who do have the one-year or two-year contract are less likely to cancel their subscription since the contract goes for a full one or two years. If someone wants to cancel their subscription there also might be fees for cancelling earlier than their contract ends. Those on year-long contract might also have discounts and bundles that incentivizes them to stay.</p>
+                </div>
+				</div>
+</div>
+</div>
+<div class = "about-container">
+        <!-- Interactive Churn Predictor -->
+        <div class="dashboard-section" id="churn-prediction">
+            <h2 class="ds-heading">Machine Learning Models</h2>   
+</div>
+        <!-- Main Charts -->
+			<h2 style = "margin:20px;" class = "ds-officename">Random Forest Model</h2>
+            <button class="code-btn" onclick="toggleCodeSection('RF-Model')">Show Python Code</button>
+        <div id="RF-Model" class="code-section">
+            <div class="code-header">
+                <span>Python Code for Random Forest Model</span>
+                <button class="copy-btn" onclick="copyCode('RF-Model')">Copy</button>
+            </div>
+            <pre>
+# Define features and target
+X = df_copy.drop(columns=['Churn']) 
+y = df_copy['Churn']
+X = pd.get_dummies(X, drop_first=True)
+
+# Split the dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+            
+# Train with Random Forest
+random_forest = RandomForestClassifier(n_estimators=100, random_state=42)
+random_forest.fit(X_train, y_train)
+y_pred_RF = random_forest.predict(X_test)
+
+# Evaluate performance
+accuracy = accuracy_score(y_test, y_pred_RF)
+print(f"Accuracy: {accuracy * 100}%")
+
+# Confusion matrix for Random Forest
+confusion_matrix_RF = metrics.confusion_matrix(y_test, y_pred_RF)
+class_names=[0,1] # name  of classes
+fig, ax = plt.subplots()
+tick_marks = np.arange(len(class_names))
+plt.xticks(tick_marks, class_names)
+plt.yticks(tick_marks, class_names)
+
+# create heatmap
+sns.heatmap(pd.DataFrame(confusion_matrix_RF), annot=True, cmap="YlGnBu" ,fmt='g')
+ax.xaxis.set_label_position("top")
+plt.tight_layout()
+plt.title('Confusion Matrix for Random Forest Classifier', y=1.1)
+plt.ylabel('Actual label')
+plt.xlabel('Predicted label')
+
+# Predict probabilities using ROC Curve
+y_probs = random_forest.predict_proba(X_test)[:, 1]
+fpr_rf, tpr_rf, thresholds = roc_curve(y_test, y_probs)
+auc = metrics.roc_auc_score(y_test, y_probs)
+plt.plot(fpr_rf, tpr_rf, label="data 1, auc="+str(auc))
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Random Forest ROC Curve',fontsize=16)
+plt.show();
+			</pre>
+        </div>
+		</div>
+	<div class="dashboard-container">
+        <div class="chart-grid">
+            <!-- Confusion Matrix Section -->
+            <div class="chart-container">
+                <h3 class="chart-title">Confusion Matrix</h3>
+                <img src="images/CustomerChurn/RFConfusionMatrix.png" alt="Confusion Matrix" class="chart-image">
+            
+                <ul class="chart-caption">
+                    <li>True Negatives (TN): 946 – Model correctly predicted class 0</li>
+                    <li>False Positives (FP): 90 – Model incorrectly predicted 1 when it was actually 0</li>
+                    <li>False Negatives (FN): 197 – Model incorrectly predicted 0 when it was actually 1</li>
+                    <li>True Positives (TP): 176 – Model correctly predicted class 1</li>
+                </ul>
+                <p class="chart-caption">Metrics you can infer:</p>
+                <ul class="chart-caption">
+                    <li>Accuracy = (TP + TN) / Total = (946 + 176) / (946 + 90 + 197 + 176) ≈ 78.5%</li>
+                    <li>Precision (for class 1) = TP / (TP + FP) = 176 / (176 + 90) ≈ 66.2%</li>
+                    <li>Recall (for class 1) = TP / (TP + FN) = 176 / (176 + 197) ≈ 47.2%</li>
+                </ul>
+			</div>
+            <!-- ROC Curve Section -->
+            <div class="chart-container">
+                <h3 class="chart-title">ROC Curve</h3>
+                <img src="images/CustomerChurn/ROCCurve.png" alt="ROC Curve" class="chart-image">
+                <p class="chart-caption">The Receiver Operating Characteristic (ROC) curve plots the true positive rate against the false positive rate. It shows the difference between positive and negative classes. The red curve being well above the diagonal line (the black dashed line representing random guessing) indicates that your model performs much better than random. The area under the ROC curve (AUC) appears to be quite good, probably around 0.85–0.9, suggesting strong discriminative ability.</p>
+            </div>
+        </div>
+    </div>
+<div class="about-container">
+<h2 style = "margin:20px;" class = "ds-officename">Logistical Regression Model</h2>
+            <button class="code-btn" onclick="toggleCodeSection('Logit-Model')">Show Python Code</button>
+        <div id="Logit-Model" class="code-section">
+            <div class="code-header">
+                <span>Python Code for Logistical Regression Model</span>
+                <button class="copy-btn" onclick="copyCode('Logit-Model')">Copy</button>
+            </div>
+            <pre>
+# Scale the features
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# Train logistic regression model
+logisticRegr = LogisticRegression(max_iter=500)
+logisticRegr.fit(X_train_scaled, y_train)
+
+# Model evaluation
+accuracy = logisticRegr.score(X_test_scaled, y_test)
+y_pred_log = logisticRegr.predict(X_test_scaled)
+print(f"Accuracy: {accuracy * 100}%")
+
+# Fit logistic regression model
+logit_model = sm.Logit(y, X)
+result = logit_model.fit()
+print(result.summary())
+
+confusion_matrix = metrics.confusion_matrix(y_test, y_pred_log)
+
+# Create confusion matrix heat map for Logistic Regression
+class_names=[0,1] # name  of classes
+fig, ax = plt.subplots()
+tick_marks = np.arange(len(class_names))
+plt.xticks(tick_marks, class_names)
+plt.yticks(tick_marks, class_names)
+
+# create heatmap
+sns.heatmap(pd.DataFrame(confusion_matrix), annot=True, cmap="YlGnBu" ,fmt='g')
+ax.xaxis.set_label_position("top")
+plt.tight_layout()
+plt.title('Confusion matrix for Logistical Regression', y=1.1)
+plt.ylabel('Actual label')
+plt.xlabel('Predicted label')
+			</pre>
+        </div>
+		</div>
+		<div class="dashboard-container">
+			<div class="chart-grid">
+                <div class="chart-container">
+                    <h3 class="chart-title">Confusion Matrix</h3>
+                    <img src="images/CustomerChurn/logitCM.png" alt="Churn Rate by Contract Type" class="chart-image">
+                    <ul class="chart-caption">
+                    <li>True Negatives (TN): 938 – Model correctly predicted class 0</li>
+                    <li>False Positives (FP): 98 – Model incorrectly predicted 1 when it was actually 0</li>
+                    <li>False Negatives (FN): 165 – Model incorrectly predicted 0 when it was actually 1</li>
+                    <li>True Positives (TP): 208 – Model correctly predicted class 1</li>
+                </ul>
+                <p class="chart-caption">Metrics you can infer:</p>
+                <ul class="chart-caption">
+                    <li>Accuracy = (TP + TN) / Total = (938 + 208) / (938 + 98 + 165 + 208) ≈ 81.3%</li>
+                    <li>Precision (for class 1) = TP / (TP + FP) = 208 / (208 + 98) ≈ 67.97%</li>
+                    <li>Recall (for class 1) = TP / (TP + FN) = 208 / (208 + 165) ≈ 55.76%</li>
+                </ul>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Regression Table</h3>
+                    <img src="images/CustomerChurn/regtable.png" alt="Churn Rate by Payment Method" class="chart-image">
+                    <p class="chart-caption">The table shows the estimated coefficients, standard errors, and significance levels for each predictor in the logistic regression model. Key factors negatively associated with churn include having a contract, tech support, and online security services. Conversely, features like paperless billing and higher monthly charges show a positive association with churn. Variables such as gender and payment method were not statistically significant in predicting churn.</p>
+					</div>
+			</div>
+</div>
+<!-- Wave Separator Section -->
+            <div class="wave-section">
+                <div class="wave-container">
+                    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                        <path fill="#F26464" fill-opacity="0.15" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    </svg>
+                </div>
+                <div class="wave-content">
+                     <div class="metric-value" style="color: #F26464;">81.3%</div>
+					<h3>Accuracy</h3>
+				<p>The Random Forest model achieved an overall accuracy of approximately 78.5%, as indicated by the confusion matrix. While it demonstrated strong performance in correctly identifying non-churners, it struggled with correctly classifying churners, reflected in a relatively low recall for the positive class (around 47.2%). In contrast, the improved Logistic Regression model, though slightly lower in raw predictive performance (as Logistic Regression models often are), offered better interpretability and highlighted statistically significant factors driving churn, such as contract type, tech support, and online security services. After refining the feature set and tuning hyperparameters, the Logistic Regression model's accuracy improved and approached that of the Random Forest, with additional benefits of clarity and actionable business insights. Ultimately, while the Random Forest may slightly outperform in predictive power, the improved Logistic Regression model bridges much of that gap and excels in explainability — making it a strong choice for stakeholder-facing use or policy-making decisions.</p>
+                </div>
+			</div>
+           
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="Interaction.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script src = "Dashboard.js"></script>
+<script src = "pythonVisual.js"></script>
+<!-- Remove any other animation scripts and use just this one -->
+<script src = "Animation.js"></script>
+</body>
+</html>
