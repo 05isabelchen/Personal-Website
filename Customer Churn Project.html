@@ -35,7 +35,7 @@
                 <a href="Projects.html" class="active dropdown-toggle">Projects</a>
                 <ul class="dropdown-menu">
                   <li><a href="Customer Churn Project.html">Customer Churn</a></li>
-                  <li><a href="Projects/data-analysis.html">Website</a></li>
+                  <li><a href="Portfolio.html">Website</a></li>
                   <li><a href="Projects/ui-design.html">Podcast</a></li>
                   <li><a href="Projects/mobile-apps.html">Articles</a></li>
                 </ul>
@@ -180,7 +180,8 @@ print(payment_dist)
 print('\n')
 
 # Percentage for Payment Method in Customer Churn overall
-payment_churn_percentage = df.groupby('Churn')['PaymentMethod'].value_counts(normalize=True).mul(100).unstack()
+payment_churn_percentage = df.groupby('Churn')['PaymentMethod'].
+↪value_counts(normalize=True).mul(100).unstack()
 print(payment_churn_percentage)
 
 #Frequency tables for each telecommunication service
@@ -238,8 +239,8 @@ generate_service_frequency_by_churn(df, demographics)
 			  <option value="partner">Partner</option>
 			  <option value="phoneservice">Phone Service</option>
 			  <option value="multiplelines">Multiple Lines</option>
-              <option value="streamingTV">Streaming TV</option>
-			  <option value="streamingMovies">Streaming Movies</option>
+              <option value="streamingservice">Streaming TV</option>
+			  <option value="streamingservice">Streaming Movies</option>
 			  <option value="internet">Internet Service</option>
               <option value="techsupport">Tech Support</option>
               <option value="onlinesecurity">Online Security</option>
@@ -776,7 +777,7 @@ plt.xlabel('Predicted label')
                 </div>
                 <div class="chart-container">
                     <h3 class="chart-title">Regression Table</h3>
-                    <img src="images/CustomerChurn/RegTable.png" alt="Churn Rate by Payment Method" class="chart-image">
+                    <img src="images/CustomerChurn/regtable.png" alt="Churn Rate by Payment Method" class="chart-image">
                     <p class="chart-caption">The table shows the estimated coefficients, standard errors, and significance levels for each predictor in the logistic regression model. Key factors negatively associated with churn include having a contract, tech support, and online security services. Conversely, features like paperless billing and higher monthly charges show a positive association with churn. Variables such as gender and payment method were not statistically significant in predicting churn.</p>
 					</div>
 			</div>
@@ -794,15 +795,30 @@ plt.xlabel('Predicted label')
 				<p>The Random Forest model achieved an overall accuracy of approximately 78.5%, as indicated by the confusion matrix. While it demonstrated strong performance in correctly identifying non-churners, it struggled with correctly classifying churners, reflected in a relatively low recall for the positive class (around 47.2%). In contrast, the improved Logistic Regression model, though slightly lower in raw predictive performance (as Logistic Regression models often are), offered better interpretability and highlighted statistically significant factors driving churn, such as contract type, tech support, and online security services. After refining the feature set and tuning hyperparameters, the Logistic Regression model's accuracy improved and approached that of the Random Forest, with additional benefits of clarity and actionable business insights. Ultimately, while the Random Forest may slightly outperform in predictive power, the improved Logistic Regression model bridges much of that gap and excels in explainability — making it a strong choice for stakeholder-facing use or policy-making decisions.</p>
                 </div>
 			</div>
-           
-
+           <!-- Footer -->
+<footer class="ds-footer">
+  <div class="ds-footer-container">
+    <!-- Left side - Contact info -->
+    <div class="ds-footer-left">
+      <span>Contact</span>
+      <h4>Stay in touch</h4>
+      <p>05isabelchen@berkeley.edu</p>
+    </div>
+    
+    <!-- Right side - Social links -->
+    <div class="ds-footer-right">
+      <div class="social-links">
+        <a href="https://linkedin.com/in/05isabelchen" target="_blank" class="footer-link">LinkedIn</a>
+        <a href="https://github.com/05isabelchen" target="_blank" class="footer-link">GitHub</a>
+      </div>
+    </div>
+  </div>
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="JavaScript/Interaction.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  <script src = "JavaScript/Dashboard.js"></script>
 <script src = "JavaScript/pythonVisual.js"></script>
-<!-- Remove any other animation scripts and use just this one -->
 <script src = "JavaScript/Animation.js"></script>
 <script src = "JavaScript/Header.js"></script>
 </body>
