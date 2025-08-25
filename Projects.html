@@ -19,7 +19,7 @@
   </head>
 <body>
 
-<!-- header -->
+  <!-- header -->
 <header class="ds-header" id="site-header">
         <div class="ds-header-inner">
           <!-- navigation links -->
@@ -27,14 +27,7 @@
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="About.html">About</a></li>
-              <li class="dropdown">
-                <a href="Projects.html" class = "active">Projects</a>
-                <ul class="dropdown-menu">
-                  <li><a href="Customer Churn Project.html">Customer Churn</a></li>
-			<li><a href="https://open.spotify.com/show/2RQvwKZQrFr8RmS49jEGuU">Podcast</a></li>
-			<li><a href="https://econreview.studentorg.berkeley.edu/linkedin-or-locked-out-why-capable-women-opt-for-jobs-beneath-their-skillset/">Articles</a></li>
-                </ul>
-              </li>
+			  <li><a href="Projects.html" class="active">Projects</a></li>
               <li><a href="Resume.html">Resume</a></li>
             </ul>
           </nav>
@@ -76,8 +69,81 @@
   </div>
 </div>
 
-<!-- Project Gallery with masonry layout - only four specific projects -->
+<!-- Project Gallery with masonry layout - six projects -->
 <div class="project-gallery">
+  <!-- Formula Analytics - tall card -->
+  <div class="project-card standard">
+    <img src="images/f1website.jpeg" alt="Formula Analytics Website" class="project-image">
+    <div class="project-info">
+      <h3 class="project-title">Formula Analytics</h3>
+      <p class="project-description">A comprehensive Formula 1 analytics platform featuring race data visualization, driver performance metrics, and season statistics with interactive dashboards.</p>
+      <div class="project-tags">
+        <span class="project-tag">HTML</span>
+        <span class="project-tag">CSS</span>
+        <span class="project-tag">JavaScript</span>
+        <span class="project-tag">SciPy</span>
+        <span class="project-tag">Machine Learning</span>
+        <span class="project-tag">MCMC Algorithms</span>
+        <span class="project-tag">Monte Carlo Simulation</span> 
+        <span class="project-tag">Bayesian Inference</span> 
+        <span class="project-tag">Correlation Analysis</span> 
+        <span class="project-tag">Hypothesis Testing</span> 
+      </div>
+      <section>
+        <a href="https://05isabelchen.github.io/formula-analytics/WDC2021.html" class="ds-button">Details</a>
+      </section>
+    </div>
+  </div>
+
+  <!-- Personal Website - Short card -->
+  <div class="project-card short">
+    <img src="images/Personal Website.png" alt="Personal Website" class="project-image">
+    <div class="project-info">
+      <h3 class="project-title">Personal Website</h3>
+      <p class="project-description">Design and development of my personal portfolio website showcasing my skills and projects.</p>
+      <div class="project-tags">
+        <span class="project-tag">HTML</span>
+        <span class="project-tag">CSS</span>
+        <span class="project-tag">JavaScript</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book Expectations - Standard height card -->
+  <div class="project-card standard">
+    <img src="images/Book Expectations.png" alt="Book Expectations Podcast" class="project-image">
+    <div class="project-info">
+      <h3 class="project-title">Book Expectations Podcast</h3>
+      <p class="project-description">A literary podcast exploring contemporary fiction and the expectations readers bring to different genres and literary traditions.</p>
+      <div class="project-tags">
+        <span class="project-tag">Adobe Audition</span>
+        <span class="project-tag">Audio Editing</span>
+        <span class="project-tag">Audacity</span>
+      </div>
+      <section>
+        <a href="https://open.spotify.com/show/2RQvwKZQrFr8RmS49jEGuU" class="ds-button">Details</a>
+      </section>
+    </div>
+  </div>
+
+    <!-- Eventure - standard card -->
+  <div class="project-card short">
+    <img src="images/eventure.png" alt="Eventure Website" class="project-image">
+    <div class="project-info">
+      <h3 class="project-title">Eventure</h3>
+      <p class="project-description">An event management platform that connects event organizers with attendees, featuring booking systems, event discovery, and community engagement tools.</p>
+      <div class="project-tags">
+        <span class="project-tag">React</span>
+        <span class="project-tag">JavaScript</span>
+        <span class="project-tag">DOM Manipulation</span>
+        <span class="project-tag">UI/UX</span>
+      </div>
+      <section>
+        <a href="https://05isabelchen.github.io/Eventure/index.html" class="ds-button">Details</a>
+      </section>
+    </div>
+  </div>
+
   <!-- Customer Churn - standard card -->
   <div class="project-card standard">
     <img src="images/Customer Churn.jpeg" alt="Customer Churn Prediction" class="project-image">
@@ -89,15 +155,36 @@
         <span class="project-tag">Machine Learning</span>
         <span class="project-tag">Data Analysis</span>
       </div>
-	  <section>
-      <a href="Customer Churn Project.html" class="ds-button">Details</a>
-	  </section>
+      <section>
+        <a href="Customer Churn Project.html" class="ds-button">Details</a>
+      </section>
     </div>
   </div>
   
+  
   <!-- Economic Articles - Standard height card -->
-  <div class="project-card standard">
-    <img src="images/Econ Articles.png" alt="Book Expectations Podcast" class="project-image">
+  <div class="project-card short">
+    <img src="images/DailyCal.png" alt="Economic Articles" class="project-image">
+    <div class="project-info">
+      <h3 class="project-title">The Daily Californian Articles</h3>
+      <p class="project-description">Analyzed 8 years of UC Berkeley voting data and referendum records to identify correlations between fee referendums and voter turnout</p>
+      <div class="project-tags">
+        <span class="project-tag">Data Analysis</span>
+        <span class="project-tag">Sourcing & Interviewing</span>
+        <span class="project-tag">Research</span>
+        <span class="project-tag">Writing</span>
+      </div>
+      <section>
+        <a href="https://www.dailycal.org/projects/campus/fee-referendums-drive-asuc-voter-turnout/article_f34f73ee-7802-4e87-bd98-aa7028e797ad.html" class="ds-button">Details</a>
+      </section>
+    </div>
+  </div>
+
+
+
+  <!-- Economic Articles - Standard height card -->
+  <div class="project-card short">
+    <img src="images/Econ Articles.png" alt="Economic Articles" class="project-image">
     <div class="project-info">
       <h3 class="project-title">Economic Articles</h3>
       <p class="project-description">Wrote articles on various economic topics such as women job search behavior and the impact of COVID-19 on the consumption of literature.</p>
@@ -106,43 +193,14 @@
         <span class="project-tag">Research</span>
         <span class="project-tag">Writing</span>
       </div>
-	  <section>
-      <a href="https://econreview.studentorg.berkeley.edu/linkedin-or-locked-out-why-capable-women-opt-for-jobs-beneath-their-skillset/" class="ds-button">Details</a>
-	  </section>
-    </div>
-  </div>
-  
-  <!-- Personal Website - Short card -->
-  <div class="project-card short">
-    <img src="images/Personal Website.png" alt="Personal Website" class="project-image">
-    <div class="project-info">
-      <h3 class="project-title">Personal Website</h3>
-      <p class="project-description">Design and development of my personal portfolio website showcasing my skills and projects.</p>
-      <div class="project-tags">
-        <span class="project-tag">HTML</span>
-        <span class="project-tag">CSS</span>
-		<span class="project-tag">JavaScript</span>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Book Expectations - Standard height card -->
-  <div class="project-card standard">
-    <img src="images/Book Expectations.png" alt="Econometrics Research" class="project-image">
-    <div class="project-info">
-      <h3 class="project-title">Book Expectations Podcast</h3>
-      <p class="project-description">A literary podcast exploring contemporary fiction and the expectations readers bring to different genres and literary traditions.</p>
-      <div class="project-tags">
-        <span class="project-tag">Adobe Audition</span>
-        <span class="project-tag">Audio Editing</span>
-		<span class="project-tag">Audacity</span>
-      </div>
       <section>
-	  <a href="https://open.spotify.com/show/2RQvwKZQrFr8RmS49jEGuU" class="ds-button">Details</a>
-	  </section>
+        <a href="https://econreview.studentorg.berkeley.edu/linkedin-or-locked-out-why-capable-women-opt-for-jobs-beneath-their-skillset/" class="ds-button">Details</a>
+      </section>
     </div>
   </div>
 </div>
+
+
 
 <!-- Footer -->
 <footer class="ds-footer">
