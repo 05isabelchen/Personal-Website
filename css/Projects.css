@@ -4,7 +4,7 @@
 .project-gallery {
   column-count: 2; /* Reduced from 3 to 2 to accommodate larger cards */
   column-gap: 25px; /* Keeping the same gap */
-  max-width: 800px; /* Keeping the same container width */
+  max-width: 1200px; /* Keeping the same container width */
   margin: 40px auto;
   padding: 0 30px; /* Keeping the same padding */
 }
@@ -197,5 +197,80 @@
   .view-project {
     font-size: 16px;
     padding: 10px 20px;
+  }
+}
+
+/* Horizontal project cards for websites */
+.project-card.horizontal {
+  display: flex;
+  flex-direction: row;
+  height: 250px;
+  width: 100%;
+  column-span: all; /* Makes it span across all columns */
+  margin-bottom: 30px;
+}
+
+.project-card.horizontal .project-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card.horizontal .project-info {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  padding: 25px;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.project-card.horizontal .project-title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.project-card.horizontal .project-description {
+  color: #555;
+  font-size: 16px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-bottom: 15px;
+}
+
+.project-card.horizontal .project-tag {
+  background-color: #F26464;
+  font-size: 13px;
+  padding: 5px 12px;
+}
+
+/* Make gallery wider */
+.project-gallery {
+  max-width: 1000px; /* Increased from 800px */
+  column-gap: 30px; /* Slightly increased gap */
+}
+
+/* Mobile adjustments for horizontal cards */
+@media (max-width: 768px) {
+  .project-card.horizontal {
+    flex-direction: column;
+    height: 400px;
+  }
+  
+  .project-card.horizontal .project-image {
+    width: 100%;
+    height: 50%;
+  }
+  
+  .project-card.horizontal .project-info {
+    width: 100%;
+    height: 50%;
+    padding: 20px;
   }
 }
